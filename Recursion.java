@@ -5,8 +5,6 @@
 * @since 2020-11-23
 */
 
-import java.util.Scanner;
-
 /**
 * This is the standard "Recursion" program.
 */
@@ -26,34 +24,43 @@ final class Recursion {
     * @throws IllegalStateException
     *
     */
+
     private Recursion() {
         // Prevent instantiation
         // Optional: throw an exception e.g. AssertionError
         // if this ever *is* called
         throw new IllegalStateException("Cannot be instantiated");
     }
+
     /**
-     * Starting the reverse Method
-     *
-     * @param String 
-     */      
-     public static String reverseString(String str) {
-         // this Method uses recursion to reverse a string
-         if (str.isEmpty())
+    * Starting the reverse Method.
+    *
+    * @param str for the parameter
+    * @return str
+    */
+
+    public static String reverseString(String str) {
+        // this Method uses recursion to reverse a string
+        if (str.isEmpty()) {
             return str;
-        //Calling Function Recursively
+        }
+        // Calling Function Recursively
         return reverseString(str.substring(1)) + str.charAt(0);
-     }
+    }
+
     /**
-    * Starting the main Method
+    * Starting the main Method.
     *
     * @param args No args will be used
     */
+
     public static void main(final String[] args) {
         // calling reverse method
-        String str = "recursion";
-        String reversed = reverseString(str);
-        System.out.println("The reversed string is: " + reversed);
+        final String str = "recursion";
+        System.out.println("The original string is: " + str);
+        final String reversed = reverseString(str);
+        System.out.println(SPACE + "The reversed string is (using Recursion): "
+                                 + reversed);
         // print Done.
         System.out.println("\nDone.");
     }
