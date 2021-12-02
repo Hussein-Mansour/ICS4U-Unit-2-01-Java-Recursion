@@ -41,11 +41,14 @@ final class Recursion {
 
     public static String reverseString(String str) {
         // this Method uses recursion to reverse a string
+        final String retStr;
         if (str.isEmpty()) {
-            return str;
+            retStr = str;
+        } else {
+            retStr = reverseString(str.substring(1)) + str.charAt(0);
+
         }
-        // Calling Function Recursively
-        return reverseString(str.substring(1)) + str.charAt(0);
+        return retStr;
     }
 
     /**
